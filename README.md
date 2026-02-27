@@ -1,5 +1,7 @@
 # ChronosRep
 
+[![DOI](https://zenodo.org/badge/1168176978.svg)](https://doi.org/10.5281/zenodo.18798504)
+
 ChronosRep is an agent-based simulation framework for studying trust and reputation dynamics in decentralised identity ecosystems.
 The system models how verifiable credentials propagate, decay, and get contested across a population of heterogeneous agents,
 and provides a formal mechanism for detecting adversarial behaviour through a combination of evidence fusion, stochastic differential dynamics,
@@ -284,7 +286,7 @@ To run the full unit test suite:
 ```
 pytest tests/
 ```
-## Citation
+<!-- ## Citation
 
 If you use this codebase in your research, please cite:
 
@@ -294,4 +296,4 @@ If you use this codebase in your research, please cite:
              for Decentralized Identity Intelligence},
   year    = {2026},
 }
-```
+``` -->
