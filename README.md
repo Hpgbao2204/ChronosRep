@@ -173,8 +173,8 @@ $$r_{static} \leftarrow r_{static} \cdot (1 - 0.5 \cdot \text{anomaly})$$
 The ITE module maintains a directed NetworkX graph of interactions and recomputes Louvain community partitions
 every ten steps.
 For each community, it computes two statistics: the internal density (DIN) and the external connectivity ratio.
-A community is flagged as suspect when $\text{DIN} \geq 0.60$ and $\text{ext\_ratio} \leq 0.20$,
-meaning it is internally dense but isolated from the rest of the graph.
+A community is flagged as suspect when its internal density meets or exceeds 0.60 and its external connectivity
+ratio falls at or below 0.20, meaning it is internally dense but isolated from the rest of the graph.
 
 The structural penalty applied to evidence from a suspect community is
 
@@ -284,51 +284,6 @@ To run the full unit test suite:
 ```
 pytest tests/
 ```
-
----
-
-## Parameters
-
-The principal parameters of the simulation are set in `ChronosRepModel`.
-
-| Parameter | Default | Description |
-|-----------|---------|-------------|
-| N | 1000 | Number of agents |
-| T | 500 | Simulation time horizon (steps) |
-| tau | 0.4 | Isolation threshold applied to BetP(trusted) |
-| theta_0 | 0.30 | Initial OU mean reversion speed |
-| sigma | 0.03 | OU diffusion coefficient |
-| jump_scale | 0.35 | Jump magnitude when Gamma exceeds threshold |
-| alpha | 0.05 | Adaptive theta learning rate |
-| cusum_h | 4.0 | CUSUM decision threshold |
-| cusum_k | 0.50 | CUSUM allowance parameter |
-| entropy_eta | 2.5 | DST entropy filter threshold |
-| din_threshold | 0.60 | Suspect community internal density threshold |
-| ext_threshold | 0.20 | Suspect community external ratio ceiling |
-
----
-
-## Notation Reference
-
-| Symbol | Meaning |
-|--------|---------|
-| $m(A)$ | Basic belief assignment of hypothesis $A$ |
-| $K$ | Conflict coefficient between two mass functions |
-| $\text{Bel}(A)$ | Belief in $A$ — lower bound on probability |
-| $\text{Pl}(A)$ | Plausibility of $A$ — upper bound on probability |
-| $\text{BetP}(A)$ | Pignistic probability of $A$ — decision-theoretic point estimate |
-| $X_t$ | SDE state variable representing dynamic reputation at time $t$ |
-| $\theta$ | OU mean reversion speed |
-| $\mu$ | OU long-run mean |
-| $\sigma$ | OU diffusion coefficient |
-| $\Gamma$ | Dimensionless anomaly ratio gating the jump term |
-| $J$ | Jump magnitude |
-| $S_t^+$ | Upper CUSUM statistic |
-| $\text{DIN}$ | Internal density of a community |
-| $\tau$ | Isolation threshold |
-
----
-
 ## Citation
 
 If you use this codebase in your research, please cite:
