@@ -286,14 +286,18 @@ To run the full unit test suite:
 ```
 pytest tests/
 ```
-<!-- ## Citation
+## Citation
 
 If you use this codebase in your research, please cite:
 
 ```
-@article{chronosrep2026,
-  title   = {Entropy-Regularized Evidence Fusion and Stochastic Differential Trust Dynamics
-             for Decentralized Identity Intelligence},
-  year    = {2026},
+@software{chronosrep_source,
+  author       = {Tuan-Dung Tran, Bao Huynh, Van-Hau Pham},
+  title        = {{ChronosRep: Entropy-Regularized Evidence Fusion and Stochastic Differential Trust Dynamics for Decentralized Identity Intelligence}},
+  month        = feb,
+  year         = 2026,
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.18798504},
+  url          = {https://doi.org/10.5281/zenodo.18798504}
 }
-``` -->
+```
